@@ -1,6 +1,7 @@
 <%@page contentType='text/html' pageEncoding='UTF-8'%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="vdab" uri="http://vdab.be/tags" %>
 <c:if test="${not empty sessionScope.locale}">
 	<fmt:setLocale value="${sessionScope.locale}"/>
 </c:if>
@@ -9,12 +10,10 @@
 <!doctype html>
 <html lang="nl">
 	<head>
-		<c:import url="/WEB-INF/JSP/head.jsp">
-			<c:param name="title" value="Identificatie"/>
-		</c:import>
+		<vdab:head title="Identificatie"/>
 	</head>
 	<body>
-		<c:import url="/WEB-INF/JSP/menu.jsp"/>
+		<vdab:menu/>
 		<h1><fmt:message key="identificatie"/></h1>
 		<form method="post">
 			<label><fmt:message key="naam"/><input name="gebruikersnaam" value="${gebruikersnaam}"

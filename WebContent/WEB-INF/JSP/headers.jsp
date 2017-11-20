@@ -1,14 +1,13 @@
 <%@page contentType='text/html' pageEncoding='UTF-8' session='false'%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="vdab" uri="http://vdab.be/tags" %>
 <!doctype html>
 <html lang="nl">
 	<head>
-		<c:import url="/WEB-INF/JSP/head.jsp">
-			<c:param name="title" value="Headers"/>
-		</c:import>
+		<vdab:head title="Headers"/>
 	</head>
 	<body>
-		<c:import url="/WEB-INF/JSP/menu.jsp"/>
+		<vdab:menu/>
 		Je browser: ${empty browser ? "onbekend" : browser}
 		<dl>
 			<c:forEach var="h" items="${headers}">
